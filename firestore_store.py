@@ -362,8 +362,8 @@ class FirestoreGameStore:
             current = state(row, round_id)
             if not row.get('started') or current['ended']:
                 return 409, {'error': 'This investigation is not active.'}, None
-            if row.get('progress', 0) < len(QUESTIONS) or not all(submission.values()):
-                return 422, {'error': 'Unlock all five clues and complete your accusation first.'}, None
+            if not all(submission.values()):
+                return 422, {'error': 'Complete all three accusation fields first.'}, None
             row['last_attempt'] = submission
             correct = correct_submission(submission)
             specs = [self._event('final_attempt',

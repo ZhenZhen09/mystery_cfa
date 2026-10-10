@@ -592,8 +592,8 @@ class Handler(SimpleHTTPRequestHandler):
                                   summary=f'Team {team} unlocked clue {index + 1}: {QUESTIONS[index][2]}.')
             elif path == '/api/final':
                 submission = {key: str(data.get(key, '')).strip()[:100] for key in SOLUTION}
-                if row['progress'] < 5 or not all(submission.values()):
-                    message, status = 'Unlock all five clues and complete your accusation first.', 422
+                if not all(submission.values()):
+                    message, status = 'Complete all three accusation fields first.', 422
                 else:
                     connection.execute('UPDATE teams SET last_attempt=? WHERE id=?',
                                        (json.dumps(submission, ensure_ascii=False), team))

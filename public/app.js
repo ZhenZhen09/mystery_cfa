@@ -1,6 +1,6 @@
 const app = document.querySelector('#app');
 let team = 1;
-let current = null, screen = 'home', selectedClue = null, receivedAt = 0, busy = false;
+let current = null, screen = 'home', selectedClue = null, finalAccusationOpen = false, receivedAt = 0, busy = false;
 let portalRoundId = null, finalAttemptEditing = false;
 let gmPage = 'overview';
 let gmCodeDrafts = {1: '', 2: ''}, gmCodeVisible = {1: false, 2: false};
@@ -29,6 +29,7 @@ async function enterTeam(number) {
   url.searchParams.set('team', String(team));
   history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
   selectedClue = null;
+  finalAccusationOpen = false;
   try { await refresh(); portalRoundId = current.round_id; finalAttemptEditing = false; if (current.started) {screen = 'game'; renderGame();} else brief(); }
   catch (error) {
     if (error.status === 401) return teamCodePrompt();
@@ -311,14 +312,14 @@ function renderGame() {
   document.body.classList.add('investigation-active');
   updateSuspense();
   const elapsed = current.ended && current.elapsed != null ? `<span>CASE CLOSED · ${formatTime(current.elapsed)} ELAPSED</span>` : '<span>TIME TO FIND THE TRUTH</span>';
-  app.innerHTML = `<div class="case-top"><div><p class="eyebrow">TEAM ${team === 1 ? 'ONE · THE NIGHT OWLS' : 'TWO · THE SILENT WITNESSES'}</p><h1>The Last Reunion Dinner</h1></div><div class="timer"><strong id="clock">${formatTime(Math.ceil(remaining()))}</strong>${elapsed}</div></div><div class="case-grid"><aside class="case-sidebar"><h2>YOUR CASE FILE</h2>${[1,2,3,4,5].map(n => `<button class="clue-tab ${selectedClue === n ? 'active' : ''}" data-clue="${n}" ${n > current.progress ? 'disabled' : ''}><b>${String(n).padStart(2,'0')}</b><span>Clue ${n}</span> ${n <= current.progress ? '✓' : '○'}</button>`).join('')}<button class="clue-tab" id="investigation" ${current.progress < 5 && !current.ended ? 'disabled aria-label="Final accusation locked until all five clues are recovered"' : ''}><b>06</b><span>${current.ended ? 'The truth' : current.progress === 5 ? 'Final accusation' : `Locked · ${current.progress}/5 clues`}</span> →</button><p class="sidebar-note">${current.progress} of 5 clues recovered.<br>Compare the evidence before making your final accusation.</p><button id="switch" class="subtle-link">Return to team selection</button></aside><section class="card" id="case-content"></section></div><p id="connection" role="status"></p>`;
-  app.querySelectorAll('[data-clue]').forEach(b => b.onclick = () => {selectedClue = Number(b.dataset.clue); renderGame();});
-  document.querySelector('#investigation').onclick = () => {selectedClue = null; renderGame();};
+  app.innerHTML = `<div class="case-top"><div><p class="eyebrow">TEAM ${team === 1 ? 'ONE · THE NIGHT OWLS' : 'TWO · THE SILENT WITNESSES'}</p><h1>The Last Reunion Dinner</h1></div><div class="timer"><strong id="clock">${formatTime(Math.ceil(remaining()))}</strong>${elapsed}</div></div><div class="case-grid"><aside class="case-sidebar"><h2>YOUR CASE FILE</h2>${[1,2,3,4,5].map(n => `<button class="clue-tab ${selectedClue === n ? 'active' : ''}" data-clue="${n}" ${n > current.progress ? 'disabled' : ''}><b>${String(n).padStart(2,'0')}</b><span>Clue ${n}</span> ${n <= current.progress ? '✓' : '○'}</button>`).join('')}<button class="clue-tab ${finalAccusationOpen || current.progress === 5 ? 'active' : ''}" id="investigation"><b>06</b><span>${current.ended ? 'The truth' : current.progress === 5 ? 'Final accusation' : 'Wild guess'}</span> →</button><p class="sidebar-note">${current.progress} of 5 clues recovered.<br>${current.progress < 5 ? 'You can make a wild guess now; a wrong accusation costs 3 minutes.' : 'Compare the evidence before making your final accusation.'}</p><button id="switch" class="subtle-link">Return to team selection</button></aside><section class="card" id="case-content"></section></div><p id="connection" role="status"></p>`;
+  app.querySelectorAll('[data-clue]').forEach(b => b.onclick = () => {selectedClue = Number(b.dataset.clue); finalAccusationOpen = false; renderGame();});
+  document.querySelector('#investigation').onclick = () => {selectedClue = null; finalAccusationOpen = true; renderGame();};
   document.querySelector('#switch').onclick = () => {selectedClue = null; home();};
   const content = document.querySelector('#case-content');
   if (selectedClue && selectedClue <= current.progress) evidence(content);
   else if (current.ended) reveal(content);
-  else if (current.progress === 5) finalForm(content);
+  else if (current.progress === 5 || finalAccusationOpen) finalForm(content);
   else question(content);
 }
 function question(content) {
@@ -348,7 +349,7 @@ function finalForm(content) {
     document.querySelector('#retry-accusation').onclick = () => {finalAttemptEditing = true; renderGame();};
     return;
   }
-  content.innerHTML = `<p class="eyebrow">QUESTION 06 · YOUR FINAL DEDUCTION</p><h2>Everyone has a secret.<br>Only one is a killer.</h2><p>You have all five clues. Discuss your theory, then identify the killer, the weapon, and the motive. An incorrect combination deducts 3 minutes; you can try again.</p><form id="final-form" autocomplete="off"><div class="form-grid"><div><label class="answer-label" for="killer">KILLER</label><input id="killer" autocomplete="off" required maxlength="100" placeholder="Who committed the murder?"></div><div><label class="answer-label" for="weapon">MURDER WEAPON</label><input id="weapon" autocomplete="off" required maxlength="100" placeholder="What killed the victim?"></div><div class="full"><label class="answer-label" for="motive">MOTIVE</label><select id="motive" autocomplete="off" required><option value="">Select your theory</option>${['Jealousy','Business Conflict','Unresolved conflict','Infidelity Issues','Money Motive','Insecurity'].map(m => `<option>${m}</option>`).join('')}</select></div></div><p class="small-note">Answers ignore capitalization. Review your evidence before submitting.</p><button class="primary" type="submit">Submit final accusation ↗</button><p class="error" id="final-error" role="status"></p></form>`;
+  content.innerHTML = `<p class="eyebrow">QUESTION 06 · YOUR FINAL DEDUCTION</p><h2>Everyone has a secret.<br>Only one is a killer.</h2><p>${current.progress < 5 ? `You have recovered ${current.progress} of 5 clues. Make a wild guess now if you like; a wrong combination deducts 3 minutes.` : 'You have all five clues. Discuss your theory before you submit.'} Identify the killer, the weapon, and the motive.</p><form id="final-form" autocomplete="off"><div class="form-grid"><div><label class="answer-label" for="killer">KILLER</label><input id="killer" autocomplete="off" required maxlength="100" placeholder="Who committed the murder?"></div><div><label class="answer-label" for="weapon">MURDER WEAPON</label><input id="weapon" autocomplete="off" required maxlength="100" placeholder="What killed the victim?"></div><div class="full"><label class="answer-label" for="motive">MOTIVE</label><select id="motive" autocomplete="off" required><option value="">Select your theory</option>${['Jealousy','Business Conflict','Unresolved conflict','Infidelity Issues','Money Motive','Insecurity'].map(m => `<option>${m}</option>`).join('')}</select></div></div><p class="small-note">Answers ignore capitalization. Review your evidence before submitting.</p><button class="primary" type="submit">Submit final accusation ↗</button><p class="error" id="final-error" role="status"></p></form>`;
   document.querySelector('#final-form').onsubmit = async e => {
     e.preventDefault(); if (busy) return; busy = true; e.submitter.disabled = true;
     const data = Object.fromEntries(['killer','weapon','motive'].map(k => [k, document.getElementById(k).value]));
