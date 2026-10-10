@@ -48,7 +48,10 @@ class FirestoreGameStore:
     def _transactional(callback, transaction):
         if firestore is None:
             raise RuntimeError('Firestore backend is unavailable.')
-        return firestore.transactional(callback)(transaction)
+        # Transaction callbacks in this store are already decorated with
+        # @firestore.transactional. Wrapping them again nests two commit
+        # cycles on the same transaction and the outer commit has no ID.
+        return callback(transaction)
 
     @staticmethod
     def _team_defaults(team):
