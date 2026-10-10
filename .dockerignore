@@ -1,0 +1,16 @@
+.git
+.runtime
+.superpowers
+.playwright-mcp
+__pycache__
+*.py[cod]
+*.sqlite
+*.sqlite3
+*.db
+tests
+docs
+audio
+.env
+.env.*
+*service-account*.json
+*-firebase-adminsdk-*.json

@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: cfamystery
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py --host 0.0.0.0 --port $PORT
+    healthCheckPath: /healthz
+    envVars:
+      - key: DATA_BACKEND
+        value: firestore
+      - key: GOOGLE_CLOUD_PROJECT
+        value: cfamystery
+      - key: GOOGLE_APPLICATION_CREDENTIALS
+        value: /etc/secrets/firebase-service-account.json
+      - key: SESSION_COOKIE_SECURE
+        value: "1"
+      - key: GAME_MASTER_PASSWORD
+        sync: false

@@ -11,6 +11,7 @@ from http.cookies import SimpleCookie
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlsplit
+from game_rules import FINAL_ANSWERS, QUESTIONS, SOLUTION, correct_submission, event_record, normalize, state
 
 ROOT = Path(__file__).resolve().parent
 DB = Path(os.environ.get('GAME_DB', str(ROOT / '.runtime/game.sqlite3')))
@@ -24,23 +25,9 @@ TEAM_CODE_ITERATIONS = 310_000
 TEAM_LOGIN_FAILURE_LIMIT = 10
 TEAM_LOGIN_WINDOW_SECONDS = 900
 TEAM_LOGIN_LOCK_SECONDS = 300
-QUESTIONS = [
-    ('By what percentage did the Collection Team exceed their September cash target?', '111%', 'The Food', 'No poison was found in the food.'),
-    ('In the feature article, complete the title: Alvin’s Next Chapter: Balancing Work, Life, and _______.', 'learning', 'The Glass', "The waitress saw the Chef handling the victim’s glass before dinner."),
-    ('In the feature article “A Furmom’s Heart: Krisselle and Her Beloved Companions”, what breed is Dachi, her lively 2-year-old dog?', 'dachshund', 'The Secret Message', '“You promised me we would be together. I’m tired of being your secret.”'),
-    ('According to the headline “Liaison Desk Lifts Completion Rate to 89.1% on a Heavier Load”, which month carried the heavier workload?', 'september', 'The Hidden Photo', 'A photo shows the Victim and Chef together privately.'),
-    ('Overdue AR dropped to ₱55.1M while cash collections nearly doubled to ₱146.4M. Does this outcome indicate a favorable or not favorable performance? Enter “favorable” or “not favorable”.', 'favorable', 'The Waitress', "The waitress admits she saw the Chef with the victim’s glass but kept quiet because she secretly loved the Chef."),
-]
-SOLUTION = {'killer': 'The Chef', 'weapon': 'Poisoned Drink', 'motive': 'Jealousy'}
-FINAL_ANSWERS = {'killer': {'the chef', 'chef', 'sam'}, 'weapon': {'poisoned drink', 'poison drink', 'drink', 'wine'}, 'motive': {'jealousy'}}
 
-
-def normalize(value):
-    return ' '.join(str(value).strip().casefold().split())
-
-
-def correct_submission(submission):
-    return all(normalize(submission[k]) in FINAL_ANSWERS[k] for k in SOLUTION)
+DATA_BACKEND = os.environ.get('DATA_BACKEND', 'sqlite').casefold()
+FIRESTORE_STORE = None
 
 
 def connect():
@@ -63,6 +50,14 @@ class closing_connection:
 
 
 def initialize():
+    global FIRESTORE_STORE
+    if DATA_BACKEND == 'firestore':
+        from firestore_store import FirestoreGameStore
+        FIRESTORE_STORE = FirestoreGameStore(project_id=os.environ.get('GOOGLE_CLOUD_PROJECT'))
+        FIRESTORE_STORE.initialize()
+        return
+    if DATA_BACKEND != 'sqlite':
+        raise RuntimeError('DATA_BACKEND must be either "sqlite" or "firestore".')
     with closing_connection() as connection:
         connection.execute('CREATE TABLE IF NOT EXISTS teams (id INTEGER PRIMARY KEY, started REAL, progress INTEGER DEFAULT 0, submission TEXT, last_attempt TEXT, finished REAL, wrong_attempts INTEGER DEFAULT 0)')
         columns = {row['name'] for row in connection.execute('PRAGMA table_info(teams)')}
@@ -108,31 +103,6 @@ def log_event(connection, round_id, event_type, team=None, payload=None, correct
     )
 
 
-def state(row, round_id=None, reveal_solution=False):
-    now = time.time()
-    elapsed = ((row['finished'] or now) - row['started']) if row['started'] else 0
-    remaining = max(0, 1800 - elapsed - row['wrong_attempts'] * 180)
-    ended = bool(row['submission']) or remaining <= 0
-    result = {'team': row['id'], 'round_id': round_id, 'started': row['started'], 'remaining': remaining,
-              'progress': row['progress'], 'wrong_attempts': row['wrong_attempts'], 'ended': ended, 'expired': remaining <= 0,
-              'last_attempt': json.loads(row['last_attempt']) if row['last_attempt'] else None,
-              'clues': [{'number': i + 1, 'title': q[2], 'text': q[3]} for i, q in enumerate(QUESTIONS[:row['progress']])]}
-    if row['started'] and row['progress'] < 5 and not ended:
-        result['question'] = QUESTIONS[row['progress']][0]
-    if ended:
-        submitted = json.loads(row['submission']) if row['submission'] else None
-        result.update(submission=submitted,
-                      correct=bool(submitted) and correct_submission(submitted),
-                      elapsed=round((row['finished'] or row['started'] + 1800) - row['started']))
-        if reveal_solution:
-            result.update(solution=SOLUTION, solution_explanation=(
-                'The food was clean. The poison was in the drink. The Chef handled the glass, '
-                'and the hidden message and photo exposed a secret relationship. Jealousy turned '
-                'that secret into murder. The waitress witnessed the Chef handling the glass. '
-                'Her love for the Chef kept her silent until her confession connected the evidence.'))
-    return result
-
-
 def both_teams_finished(connection, round_id):
     rows = connection.execute('SELECT * FROM teams ORDER BY id').fetchall()
     return len(rows) == 2 and all(state(row, round_id)['ended'] for row in rows)
@@ -153,13 +123,6 @@ def team_code_hash(code, salt, iterations=TEAM_CODE_ITERATIONS):
 def create_team_code_record(code):
     salt = secrets.token_hex(16)
     return salt, team_code_hash(code, salt), TEAM_CODE_ITERATIONS
-
-
-def event_record(row):
-    return {'id': row['id'], 'timestamp': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime(row['created_at'])),
-            'round_id': row['round_id'], 'team': row['team_id'], 'type': row['event_type'],
-            'payload': json.loads(row['payload']) if row['payload'] else None,
-            'correct': None if row['correct'] is None else bool(row['correct']), 'summary': row['summary']}
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -224,9 +187,13 @@ class Handler(SimpleHTTPRequestHandler):
         if not origin:
             return False
         parsed = urlsplit(origin)
+        trusted_hosts = {self.headers.get('Host', '').casefold()}
+        forwarded_host = self.headers.get('X-Forwarded-Host', '').split(',', 1)[0].strip()
+        if forwarded_host:
+            trusted_hosts.add(forwarded_host.casefold())
         return (parsed.scheme in ('http', 'https') and not parsed.path and not parsed.query and not parsed.fragment
                 and parsed.username is None and parsed.password is None
-                and parsed.netloc.casefold() == self.headers.get('Host', '').casefold())
+                and parsed.netloc.casefold() in trusted_hosts)
 
     def set_session_cookie(self, token, max_age):
         parts = [f'{SESSION_COOKIE}={token}', 'Path=/', 'HttpOnly', 'SameSite=Strict', f'Max-Age={max_age}']
@@ -247,9 +214,75 @@ class Handler(SimpleHTTPRequestHandler):
         return connection.execute('SELECT token_hash, team_id, expires_at FROM team_sessions WHERE token_hash=? AND team_id=? AND expires_at>?',
                                   (session_hash(token), team, time.time())).fetchone()
 
+    def firestore_game_master_authenticated(self):
+        token = self.cookie_token()
+        return bool(token and FIRESTORE_STORE.gm_session(session_hash(token), time.time()))
+
+    def firestore_team_authenticated(self, team):
+        token = self.team_cookie_token(team)
+        return bool(token and FIRESTORE_STORE.team_session(session_hash(token), team, time.time()))
+
+    def firestore_require_game_master(self):
+        if not GAME_MASTER_PASSWORD:
+            self.respond({'error': 'Game master login is not configured on this server.'}, 503)
+            return False
+        if not self.firestore_game_master_authenticated():
+            self.respond({'error': 'Game master login required.'}, 401)
+            return False
+        return True
+
+    def firestore_get(self, path, parsed_url):
+        if path == '/api/state':
+            try:
+                team = int(parse_qs(parsed_url.query).get('team', ['0'])[0])
+                if team not in (1, 2):
+                    raise ValueError()
+            except (ValueError, TypeError):
+                return self.respond({'error': 'Choose team 1 or 2.'}, 400)
+            if not self.firestore_team_authenticated(team):
+                return self.respond({'error': 'Team access code required.'}, 401)
+            result = FIRESTORE_STORE.team_state(team)
+            if result.get('error'):
+                return self.respond(result, 409)
+            return self.respond(result)
+        if path == '/api/gm/session':
+            return self.respond({'authenticated': bool(GAME_MASTER_PASSWORD and self.firestore_game_master_authenticated())})
+        if path.startswith('/api/gm/') and not self.firestore_require_game_master():
+            return
+        if path == '/api/gm/dashboard':
+            return self.respond(FIRESTORE_STORE.dashboard())
+        if path == '/api/gm/team-codes':
+            return self.respond(FIRESTORE_STORE.team_codes())
+        if path == '/api/gm/team-codes/reveal':
+            try:
+                team = int(parse_qs(parsed_url.query).get('team', ['0'])[0])
+                if team not in (1, 2):
+                    raise ValueError()
+            except (ValueError, TypeError):
+                return self.respond({'error': 'Choose team 1 or 2.'}, 400)
+            status, result = FIRESTORE_STORE.reveal_team_code(team)
+            return self.respond(result, status)
+        if path == '/api/gm/events':
+            query = parse_qs(parsed_url.query)
+            try:
+                limit = int(query.get('limit', ['30'])[0])
+                before = int(query['before'][0]) if query.get('before') else None
+                team = int(query['team'][0]) if query.get('team') else None
+                if (not 1 <= limit <= 100 or (before is not None and before <= 0)
+                        or (team is not None and team not in (1, 2))):
+                    raise ValueError()
+            except (ValueError, TypeError):
+                return self.respond({'error': 'Invalid event page.'}, 400)
+            return self.respond(FIRESTORE_STORE.events(team, limit, before))
+        return super().do_GET()
+
     def do_GET(self):
         parsed_url = urlsplit(self.path)
         path = parsed_url.path
+        if path == '/healthz':
+            return self.respond({'ok': True, 'backend': DATA_BACKEND})
+        if DATA_BACKEND == 'firestore':
+            return self.firestore_get(path, parsed_url)
         if path == '/api/state':
             try:
                 team = int(parse_qs(parsed_url.query).get('team', ['0'])[0])
@@ -345,6 +378,74 @@ class Handler(SimpleHTTPRequestHandler):
             raise ValueError()
         return data
 
+    def firestore_post(self, path, data):
+        if path == '/api/gm/login':
+            if not GAME_MASTER_PASSWORD:
+                return self.respond({'error': 'Game master login is not configured on this server.'}, 503)
+            if not self.same_origin():
+                return self.respond({'error': 'Request origin could not be verified.'}, 403)
+            password = data.get('password')
+            if not isinstance(password, str) or not hmac.compare_digest(password.encode('utf-8'), GAME_MASTER_PASSWORD.encode('utf-8')):
+                return self.respond({'error': 'Incorrect game master password.'}, 401)
+            token, now = secrets.token_urlsafe(32), time.time()
+            FIRESTORE_STORE.create_gm_session(session_hash(token), now, now + SESSION_MAX_AGE)
+            return self.respond({'authenticated': True}, headers={'Set-Cookie': self.set_session_cookie(token, SESSION_MAX_AGE)})
+
+        if path == '/api/team/login':
+            if not self.same_origin():
+                return self.respond({'error': 'Request origin could not be verified.'}, 403)
+            team = int(data.get('team', 0))
+            code = data.get('code')
+            if not isinstance(code, str) or not 8 <= len(code.strip()) <= 200:
+                return self.respond({'error': 'Enter the team access code.'}, 400)
+            token, now = secrets.token_urlsafe(32), time.time()
+            forwarded_for = self.headers.get('X-Forwarded-For', '').split(',', 1)[0].strip()
+            client_address = forwarded_for or self.client_address[0]
+            status, result = FIRESTORE_STORE.team_login(team, code.strip(), session_hash(client_address),
+                                                        session_hash(token), now, now + TEAM_SESSION_MAX_AGE)
+            headers = {'Set-Cookie': self.set_team_session_cookie(team, token, TEAM_SESSION_MAX_AGE)} if status == 200 else None
+            return self.respond(result, status, headers)
+
+        if path.startswith('/api/gm/'):
+            if not self.firestore_require_game_master():
+                return
+            if not self.same_origin():
+                return self.respond({'error': 'Request origin could not be verified.'}, 403)
+            token = self.cookie_token()
+            if path == '/api/gm/logout':
+                if token:
+                    FIRESTORE_STORE.delete_gm_session(session_hash(token))
+                return self.respond({'authenticated': False}, headers={'Set-Cookie': self.set_session_cookie('', 0)})
+            if path == '/api/gm/team-codes':
+                team = int(data.get('team', 0))
+                code = data.get('code')
+                if not isinstance(code, str) or not 8 <= len(code.strip()) <= 200:
+                    return self.respond({'error': 'Team access codes must contain at least 8 characters.'}, 400)
+                return self.respond(FIRESTORE_STORE.replace_team_code(team, code.strip(), time.time()))
+            if path == '/api/gm/clear-team-events':
+                team = int(data.get('team', 0))
+                return self.respond({'team': team, 'deleted': FIRESTORE_STORE.clear_team_events(team)})
+            if path == '/api/gm/new-round':
+                return self.respond(FIRESTORE_STORE.new_round(time.time()))
+            return self.respond({'error': 'Unknown action.'}, 404)
+
+        if not self.same_origin():
+            return self.respond({'error': 'Request origin could not be verified.'}, 403)
+        team = int(data.get('team', 0))
+        if not self.firestore_team_authenticated(team):
+            return self.respond({'error': 'Team access code required.'}, 401)
+        if path == '/api/start':
+            status, result = FIRESTORE_STORE.start_team(team, time.time(), data.get('round_id'))
+        elif path == '/api/answer':
+            status, result = FIRESTORE_STORE.submit_answer(team, data.get('number'), data.get('answer', ''),
+                                                           time.time(), data.get('round_id'))
+        elif path == '/api/final':
+            submission = {key: str(data.get(key, '')).strip()[:100] for key in SOLUTION}
+            status, result = FIRESTORE_STORE.submit_final(team, submission, time.time(), data.get('round_id'))
+        else:
+            return self.respond({'error': 'Unknown action.'}, 404)
+        return self.respond(result, status)
+
     def do_POST(self):
         path = urlsplit(self.path).path
         allowed = ('/api/start', '/api/answer', '/api/final', '/api/team/login', '/api/gm/login', '/api/gm/logout',
@@ -368,6 +469,9 @@ class Handler(SimpleHTTPRequestHandler):
                     raise ValueError()
         except (ValueError, TypeError, AttributeError, json.JSONDecodeError):
             return self.respond({'error': 'Invalid request.'}, 400)
+
+        if DATA_BACKEND == 'firestore':
+            return self.firestore_post(path, data)
 
         if path == '/api/gm/login':
             if not GAME_MASTER_PASSWORD:

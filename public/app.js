@@ -300,7 +300,7 @@ async function refresh() {
   current = result; receivedAt = Date.now();
 }
 async function action(url, data) {
-  const response = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'},body:JSON.stringify({team,...data})});
+  const response = await fetch(url, {method:'POST', headers:{'Content-Type':'application/json'},body:JSON.stringify({team,round_id:current?.round_id,...data})});
   current = await response.json(); receivedAt = Date.now();
   if (!response.ok) throw new Error(current.error || 'Please try again.');
 }
