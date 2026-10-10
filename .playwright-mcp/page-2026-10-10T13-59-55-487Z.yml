@@ -1,0 +1,84 @@
+- generic [active] [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - link "The Last Reunion Dinner home" [ref=f4e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f4e4]: R
+      - generic [ref=f4e5]:
+        - text: REUNION
+        - generic [ref=f4e6]: A MURDER MYSTERY
+    - navigation [ref=f4e7]:
+      - button "♫ Music off" [ref=f4e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=f4e9] [cursor=pointer]
+      - generic [ref=f4e10]: CASE NO. 2010
+  - main [ref=f4e12]:
+    - generic [ref=f4e75]:
+      - generic [ref=f4e76]:
+        - paragraph [ref=f4e77]: GAME MASTER · LIVE MONITOR
+        - heading "Game Master Dashboard" [level=1] [ref=f4e78]
+        - paragraph [ref=f4e79]: Each team's 30-minute timer starts when that team enters its investigation.
+      - generic [ref=f4e80]:
+        - button "Start new round" [ref=f4e81] [cursor=pointer]
+        - button "Log out" [ref=f4e82] [cursor=pointer]
+    - navigation "Game Master pages" [ref=f4e83]:
+      - button "Team overview" [ref=f4e84] [cursor=pointer]
+      - button "Team access codes" [ref=f4e85] [cursor=pointer]
+    - region "Team progress" [ref=f4e86]:
+      - article [ref=f4e87]:
+        - generic [ref=f4e88]:
+          - generic [ref=f4e89]:
+            - paragraph [ref=f4e90]: GAME 1
+            - heading "Team One · The Night Owls" [level=2] [ref=f4e91]
+          - generic [ref=f4e92]: Not started
+        - generic [ref=f4e93]:
+          - generic [ref=f4e94]:
+            - generic [ref=f4e95]: CLUES RECOVERED
+            - strong [ref=f4e96]: 0/5
+          - generic [ref=f4e97]:
+            - generic [ref=f4e98]: TIME REMAINING
+            - strong [ref=f4e99]: 30:00
+          - generic [ref=f4e100]:
+            - generic [ref=f4e101]: WRONG FINAL ANSWERS
+            - strong [ref=f4e102]: "0"
+        - progressbar "Team 1 clue progress" [ref=f4e103]
+      - article [ref=f4e104]:
+        - generic [ref=f4e105]:
+          - generic [ref=f4e106]:
+            - paragraph [ref=f4e107]: GAME 2
+            - heading "Team Two · The Silent Witnesses" [level=2] [ref=f4e108]
+          - generic [ref=f4e109]: Not started
+        - generic [ref=f4e110]:
+          - generic [ref=f4e111]:
+            - generic [ref=f4e112]: CLUES RECOVERED
+            - strong [ref=f4e113]: 0/5
+          - generic [ref=f4e114]:
+            - generic [ref=f4e115]: TIME REMAINING
+            - strong [ref=f4e116]: 30:00
+          - generic [ref=f4e117]:
+            - generic [ref=f4e118]: WRONG FINAL ANSWERS
+            - strong [ref=f4e119]: "0"
+        - progressbar "Team 2 clue progress" [ref=f4e120]
+    - generic [ref=f4e121]:
+      - generic [ref=f4e122]:
+        - generic [ref=f4e123]:
+          - paragraph [ref=f4e124]: ROUND ACTIVITY
+          - heading "Team activity logs" [level=2] [ref=f4e125]
+        - button "Refresh" [ref=f4e126] [cursor=pointer]
+      - generic [ref=f4e127]:
+        - region "Team One activity" [ref=f4e128]:
+          - generic [ref=f4e129]:
+            - heading "Team One Activity" [level=3] [ref=f4e130]
+            - generic [ref=f4e131]:
+              - generic [ref=f4e132]: 0 events
+              - button "Delete Team One activity log" [disabled] [ref=f4e133]: Delete log
+          - paragraph [ref=f4e134]: No activity yet. Team actions will appear here.
+        - region "Team Two activity" [ref=f4e135]:
+          - generic [ref=f4e136]:
+            - heading "Team Two Activity" [level=3] [ref=f4e137]
+            - generic [ref=f4e138]:
+              - generic [ref=f4e139]: 0 events
+              - button "Delete Team Two activity log" [disabled] [ref=f4e140]: Delete log
+          - paragraph [ref=f4e141]: No activity yet. Team actions will appear here.
+  - contentinfo [ref=f4e59]:
+    - generic [ref=f4e60]: THE LAST REUNION DINNER
+    - generic [ref=f4e61]: Every old friend has a new secret.
+    - generic [ref=f4e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

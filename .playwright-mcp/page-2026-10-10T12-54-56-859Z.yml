@@ -1,0 +1,67 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - link "The Last Reunion Dinner home" [ref=f2e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e4]: R
+      - generic [ref=f2e5]:
+        - text: REUNION
+        - generic [ref=f2e6]: A MURDER MYSTERY
+    - navigation [ref=f2e7]:
+      - button "♫ Music off" [ref=f2e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=f2e9] [cursor=pointer]
+      - generic [ref=f2e10]: CASE NO. 2010
+  - main [ref=f2e12]:
+    - generic [ref=f2e63]:
+      - generic [ref=f2e64]:
+        - paragraph [ref=f2e65]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=f2e66]
+      - generic [ref=f2e67]:
+        - strong [ref=f2e68]: 29:14
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=f2e69]:
+      - complementary [ref=f2e70]:
+        - heading "YOUR CASE FILE" [level=2] [ref=f2e71]
+        - button "01 Clue 1 ○" [disabled] [ref=f2e72]:
+          - generic [ref=f2e73]: "01"
+          - generic [ref=f2e74]: Clue 1
+          - text: ○
+        - button "02 Clue 2 ○" [disabled] [ref=f2e75]:
+          - generic [ref=f2e76]: "02"
+          - generic [ref=f2e77]: Clue 2
+          - text: ○
+        - button "03 Clue 3 ○" [disabled] [ref=f2e78]:
+          - generic [ref=f2e79]: "03"
+          - generic [ref=f2e80]: Clue 3
+          - text: ○
+        - button "04 Clue 4 ○" [disabled] [ref=f2e81]:
+          - generic [ref=f2e82]: "04"
+          - generic [ref=f2e83]: Clue 4
+          - text: ○
+        - button "05 Clue 5 ○" [disabled] [ref=f2e84]:
+          - generic [ref=f2e85]: "05"
+          - generic [ref=f2e86]: Clue 5
+          - text: ○
+        - button "06 Investigation →" [ref=f2e87] [cursor=pointer]:
+          - generic [ref=f2e88]: "06"
+          - generic [ref=f2e89]: Investigation
+          - text: →
+        - paragraph [ref=f2e90]: 0 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=f2e91] [cursor=pointer]
+      - generic [ref=f2e92]:
+        - paragraph [ref=f2e93]: CLUE 01 · LOCKED EVIDENCE
+        - heading "By what percentage did the Collection Team exceed their September cash target?" [level=2] [ref=f2e94]
+        - paragraph [ref=f2e95]: Find the answer in your source article to open this evidence envelope.
+        - generic [ref=f2e96]:
+          - generic [ref=f2e97]: YOUR ANSWER
+          - generic [ref=f2e98]:
+            - textbox "YOUR ANSWER" [ref=f2e99]:
+              - /placeholder: Type your answer…
+              - text: "999"
+            - button "Unlock clue ↗" [ref=f2e100] [cursor=pointer]
+          - paragraph [ref=f2e101]: Answers are not case sensitive. Include the % symbol.
+          - status [ref=f2e102]: That answer does not unlock the evidence. Check your source and try again.
+    - status
+  - contentinfo [ref=f2e59]:
+    - generic [ref=f2e60]: THE LAST REUNION DINNER
+    - generic [ref=f2e61]: Every old friend has a new secret.
+    - generic [ref=f2e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

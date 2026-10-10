@@ -1,0 +1,33 @@
+[     218ms] [VERBOSE] [DOM] Password forms should have (optionally hidden) username fields for accessibility: (More info: https://www.chromium.org/developers/design-documents/create-amazing-password-forms) %o @ http://127.0.0.1:8769/:0
+[    7155ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://127.0.0.1:8769/api/answer:0
+[    7170ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://127.0.0.1:8769/api/answer:0
+[   25059ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   25068ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   25068ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   27568ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   27575ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   27575ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   30056ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   30064ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   30064ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   32565ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   32571ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   32571ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   35060ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   35067ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   35067ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   37553ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   37559ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   37559ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   40054ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   40060ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   40060ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   42560ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   42566ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   42567ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   45054ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   45060ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   45060ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0
+[   48202ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/dashboard:0
+[   48207ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=1&limit=30:0
+[   48207ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:8769/api/gm/events?team=2&limit=30:0

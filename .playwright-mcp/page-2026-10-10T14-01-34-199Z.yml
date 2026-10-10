@@ -1,0 +1,70 @@
+- generic [active] [ref=f6e1]:
+  - banner [ref=f6e2]:
+    - link "The Last Reunion Dinner home" [ref=f6e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f6e4]: R
+      - generic [ref=f6e5]:
+        - text: REUNION
+        - generic [ref=f6e6]: A MURDER MYSTERY
+    - navigation [ref=f6e7]:
+      - button "♫ Music off" [ref=f6e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=f6e9] [cursor=pointer]
+      - generic [ref=f6e10]: CASE NO. 2010
+  - main [ref=f6e12]:
+    - generic [ref=f6e13]:
+      - generic [ref=f6e14]:
+        - paragraph [ref=f6e15]: AN EVENING TO REMEMBER. A SECRET TO UNCOVER.
+        - heading [level=1] [ref=f6e16]:
+          - text: The LastReunion
+          - emphasis [ref=f6e17]: Dinner.
+        - paragraph [ref=f6e18]: Old friends. Unfinished stories. One final toast.A reunion takes a deadly turn when a classmate collapses at dinner. Everyone has a motive. Can your team find the truth?
+        - generic [ref=f6e19]:
+          - generic [ref=f6e20]:
+            - strong [ref=f6e21]: "30"
+            - text: MINUTES
+          - generic [ref=f6e22]:
+            - strong [ref=f6e23]: "05"
+            - text: HIDDEN CLUES
+          - generic [ref=f6e24]:
+            - strong [ref=f6e25]: "02"
+            - text: TEAMS
+        - paragraph [ref=f6e26]: CHOOSE YOUR INVESTIGATION
+        - generic [ref=f6e27]:
+          - button "Game 1 TEAM ONE · THE NIGHT OWLS" [ref=f6e28] [cursor=pointer]:
+            - text: Game 1
+            - generic [ref=f6e29]: TEAM ONE · THE NIGHT OWLS
+          - button "Game 2 TEAM TWO · THE SILENT WITNESSES" [ref=f6e30] [cursor=pointer]:
+            - text: Game 2
+            - generic [ref=f6e31]: TEAM TWO · THE SILENT WITNESSES
+        - paragraph [ref=f6e32]: Each team has a separate case file and timer.
+        - status [ref=f6e33]
+        - button "Game master login" [ref=f6e34] [cursor=pointer]
+      - generic [ref=f6e35]:
+        - generic [ref=f6e36]: THE SCENE · REUNION NIGHT
+        - generic [ref=f6e37]:
+          - text: TABLE FOR FRIENDS. ROOM FOR SECRETS.
+          - paragraph [ref=f6e38]: “Some things should havestayed in the past.”
+    - generic [ref=f6e39]:
+      - generic [ref=f6e40]:
+        - heading "Your evening, in three acts." [level=2] [ref=f6e41]
+        - paragraph [ref=f6e42]: Trust the evidence. Question everyone.
+      - generic [ref=f6e43]:
+        - generic [ref=f6e44]:
+          - generic [ref=f6e45]: "01"
+          - generic [ref=f6e46]:
+            - heading "Step into the story" [level=3] [ref=f6e47]
+            - paragraph [ref=f6e48]: Meet the people at the table. Old friendships hide complicated motives.
+        - generic [ref=f6e49]:
+          - generic [ref=f6e50]: "02"
+          - generic [ref=f6e51]:
+            - heading "Follow the evidence" [level=3] [ref=f6e52]
+            - paragraph [ref=f6e53]: Answer five questions to unlock numbered clues, hidden messages, and witness accounts.
+        - generic [ref=f6e54]:
+          - generic [ref=f6e55]: "03"
+          - generic [ref=f6e56]:
+            - heading "Make your accusation" [level=3] [ref=f6e57]
+            - paragraph [ref=f6e58]: Name the killer, the murder weapon, and the motive before time runs out.
+  - contentinfo [ref=f6e59]:
+    - generic [ref=f6e60]: THE LAST REUNION DINNER
+    - generic [ref=f6e61]: Every old friend has a new secret.
+    - generic [ref=f6e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

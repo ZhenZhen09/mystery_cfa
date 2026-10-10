@@ -1,0 +1,151 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music off" [ref=e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - paragraph [ref=e77]: GAME MASTER · LIVE MONITOR
+        - heading "Round 1" [level=1] [ref=e78]
+        - paragraph [ref=e79]: Each team's 30-minute timer starts when that team enters its investigation.
+      - generic [ref=e80]:
+        - button "Start new round" [ref=e81] [cursor=pointer]
+        - button "Log out" [ref=e82] [cursor=pointer]
+    - region "Team progress" [ref=e83]:
+      - article [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e86]:
+            - paragraph [ref=e87]: GAME 1
+            - heading "Team One · The Night Owls" [level=2] [ref=e88]
+          - generic [ref=e89]: Investigating
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: CLUES RECOVERED
+            - strong [ref=e93]: 2/5
+          - generic [ref=e94]:
+            - generic [ref=e95]: TIME REMAINING
+            - strong [ref=e96]: 28:26
+          - generic [ref=e97]:
+            - generic [ref=e98]: WRONG FINAL ANSWERS
+            - strong [ref=e99]: "0"
+        - progressbar "Team 1 clue progress" [ref=e100]
+      - article [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e104]:
+            - paragraph [ref=e105]: GAME 2
+            - heading "Team Two · The Silent Witnesses" [level=2] [ref=e106]
+          - generic [ref=e107]: Investigating
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: CLUES RECOVERED
+            - strong [ref=e111]: 0/5
+          - generic [ref=e112]:
+            - generic [ref=e113]: TIME REMAINING
+            - strong [ref=e114]: 28:31
+          - generic [ref=e115]:
+            - generic [ref=e116]: WRONG FINAL ANSWERS
+            - strong [ref=e117]: "0"
+        - progressbar "Team 2 clue progress" [ref=e118]
+    - generic [ref=e119]:
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - paragraph [ref=e122]: ROUND ACTIVITY
+          - heading "Team activity logs" [level=2] [ref=e123]
+        - button "Refresh" [ref=e124] [cursor=pointer]
+      - generic [ref=e125]:
+        - region "Team One activity" [ref=e126]:
+          - generic [ref=e127]:
+            - heading "Team One Activity" [level=3] [ref=e128]
+            - generic [ref=e129]: 7 events
+          - list [ref=e130]:
+            - listitem [ref=e131]:
+              - generic [ref=e133]:
+                - generic [ref=e134]:
+                  - strong [ref=e135]: Round 1 · Game 1 · clue unlocked
+                  - time [ref=e136]: 10/10/2026, 8:55:26 PM
+                  - generic [ref=e137]: Correct
+                - paragraph [ref=e138]: "Team 1 unlocked clue 2: The Glass."
+            - listitem [ref=e139]:
+              - generic [ref=e141]:
+                - generic [ref=e142]:
+                  - strong [ref=e143]: Round 1 · Game 1 · answer attempt
+                  - time [ref=e144]: 10/10/2026, 8:55:26 PM
+                  - generic [ref=e145]: Correct
+                - paragraph [ref=e146]: "Team 1 submitted an answer for question 2: correct."
+                - paragraph [ref=e147]: "Answer submitted: “learning”"
+            - listitem [ref=e148]:
+              - generic [ref=e150]:
+                - generic [ref=e151]:
+                  - strong [ref=e152]: Round 1 · Game 1 · answer attempt
+                  - time [ref=e153]: 10/10/2026, 8:55:22 PM
+                  - generic [ref=e154]: Incorrect
+                - paragraph [ref=e155]: "Team 1 submitted an answer for question 2: incorrect."
+                - paragraph [ref=e156]: "Answer submitted: “random wrong”"
+            - listitem [ref=e157]:
+              - generic [ref=e159]:
+                - generic [ref=e160]:
+                  - strong [ref=e161]: Round 1 · Game 1 · clue unlocked
+                  - time [ref=e162]: 10/10/2026, 8:54:59 PM
+                  - generic [ref=e163]: Correct
+                - paragraph [ref=e164]: "Team 1 unlocked clue 1: The Food."
+            - listitem [ref=e165]:
+              - generic [ref=e167]:
+                - generic [ref=e168]:
+                  - strong [ref=e169]: Round 1 · Game 1 · answer attempt
+                  - time [ref=e170]: 10/10/2026, 8:54:59 PM
+                  - generic [ref=e171]: Correct
+                - paragraph [ref=e172]: "Team 1 submitted an answer for question 1: correct."
+                - paragraph [ref=e173]: "Answer submitted: “111%”"
+            - listitem [ref=e174]:
+              - generic [ref=e176]:
+                - generic [ref=e177]:
+                  - strong [ref=e178]: Round 1 · Game 1 · answer attempt
+                  - time [ref=e179]: 10/10/2026, 8:54:55 PM
+                  - generic [ref=e180]: Incorrect
+                - paragraph [ref=e181]: "Team 1 submitted an answer for question 1: incorrect."
+                - paragraph [ref=e182]: "Answer submitted: “999”"
+            - listitem [ref=e183]:
+              - generic [ref=e185]:
+                - generic [ref=e186]:
+                  - strong [ref=e187]: Round 1 · Game 1 · team started
+                  - time [ref=e188]: 10/10/2026, 8:54:09 PM
+                - paragraph [ref=e189]: Team 1 started its investigation.
+        - region "Team Two activity" [ref=e190]:
+          - generic [ref=e191]:
+            - heading "Team Two Activity" [level=3] [ref=e192]
+            - generic [ref=e193]: 3 events
+          - list [ref=e194]:
+            - listitem [ref=e195]:
+              - generic [ref=e197]:
+                - generic [ref=e198]:
+                  - strong [ref=e199]: Round 1 · Game 2 · answer attempt
+                  - time [ref=e200]: 10/10/2026, 8:55:11 PM
+                  - generic [ref=e201]: Incorrect
+                - paragraph [ref=e202]: "Team 2 submitted an answer for question 1: incorrect."
+                - paragraph [ref=e203]: "Answer submitted: “nonsense”"
+            - listitem [ref=e204]:
+              - generic [ref=e206]:
+                - generic [ref=e207]:
+                  - strong [ref=e208]: Round 1 · Game 2 · answer attempt
+                  - time [ref=e209]: 10/10/2026, 8:54:28 PM
+                  - generic [ref=e210]: Incorrect
+                - paragraph [ref=e211]: "Team 2 submitted an answer for question 1: incorrect."
+                - paragraph [ref=e212]: "Answer submitted: “random-not-an-answer”"
+            - listitem [ref=e213]:
+              - generic [ref=e215]:
+                - generic [ref=e216]:
+                  - strong [ref=e217]: Round 1 · Game 2 · team started
+                  - time [ref=e218]: 10/10/2026, 8:54:14 PM
+                - paragraph [ref=e219]: Team 2 started its investigation.
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

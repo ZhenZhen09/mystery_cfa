@@ -1,0 +1,93 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music off" [ref=e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e75]:
+      - generic [ref=e76]:
+        - paragraph [ref=e77]: GAME MASTER · LIVE MONITOR
+        - heading "Game Master Dashboard" [level=1] [ref=e78]
+        - paragraph [ref=e79]: Each team's 30-minute timer starts when that team enters its investigation.
+      - generic [ref=e80]:
+        - button "Start new round" [ref=e81] [cursor=pointer]
+        - button "Log out" [ref=e82] [cursor=pointer]
+    - region "Team progress" [ref=e83]:
+      - article [ref=e84]:
+        - generic [ref=e85]:
+          - generic [ref=e86]:
+            - paragraph [ref=e87]: GAME 1
+            - heading "Team One · The Night Owls" [level=2] [ref=e88]
+          - generic [ref=e89]: Investigating
+        - generic [ref=e90]:
+          - generic [ref=e91]:
+            - generic [ref=e92]: CLUES RECOVERED
+            - strong [ref=e93]: 0/5
+          - generic [ref=e94]:
+            - generic [ref=e95]: TIME REMAINING
+            - strong [ref=e96]: 29:51
+          - generic [ref=e97]:
+            - generic [ref=e98]: WRONG FINAL ANSWERS
+            - strong [ref=e99]: "0"
+        - progressbar "Team 1 clue progress" [ref=e100]
+      - article [ref=e101]:
+        - generic [ref=e102]:
+          - generic [ref=e103]:
+            - paragraph [ref=e104]: GAME 2
+            - heading "Team Two · The Silent Witnesses" [level=2] [ref=e105]
+          - generic [ref=e106]: Investigating
+        - generic [ref=e107]:
+          - generic [ref=e108]:
+            - generic [ref=e109]: CLUES RECOVERED
+            - strong [ref=e110]: 0/5
+          - generic [ref=e111]:
+            - generic [ref=e112]: TIME REMAINING
+            - strong [ref=e113]: 29:53
+          - generic [ref=e114]:
+            - generic [ref=e115]: WRONG FINAL ANSWERS
+            - strong [ref=e116]: "0"
+        - progressbar "Team 2 clue progress" [ref=e117]
+    - generic [ref=e118]:
+      - generic [ref=e119]:
+        - generic [ref=e120]:
+          - paragraph [ref=e121]: ROUND ACTIVITY
+          - heading "Team activity logs" [level=2] [ref=e122]
+        - button "Refresh" [ref=e123] [cursor=pointer]
+      - generic [ref=e124]:
+        - region "Team One activity" [ref=e125]:
+          - generic [ref=e126]:
+            - heading "Team One Activity" [level=3] [ref=e127]
+            - generic [ref=e128]:
+              - generic [ref=e129]: 1 events
+              - button "Delete Team One activity log" [ref=e130] [cursor=pointer]: Delete log
+          - list [ref=e131]:
+            - listitem [ref=e132]:
+              - generic [ref=e134]:
+                - generic [ref=e135]:
+                  - strong [ref=e136]: Round 1 · Game 1 · team started
+                  - time [ref=e137]: 10/10/2026, 9:12:33 PM
+                - paragraph [ref=e138]: Team 1 started its investigation.
+        - region "Team Two activity" [ref=e139]:
+          - generic [ref=e140]:
+            - heading "Team Two Activity" [level=3] [ref=e141]
+            - generic [ref=e142]:
+              - generic [ref=e143]: 1 events
+              - button "Delete Team Two activity log" [ref=e144] [cursor=pointer]: Delete log
+          - list [ref=e145]:
+            - listitem [ref=e146]:
+              - generic [ref=e148]:
+                - generic [ref=e149]:
+                  - strong [ref=e150]: Round 1 · Game 2 · team started
+                  - time [ref=e151]: 10/10/2026, 9:12:34 PM
+                - paragraph [ref=e152]: Team 2 started its investigation.
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

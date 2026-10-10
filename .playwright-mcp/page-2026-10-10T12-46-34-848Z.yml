@@ -1,0 +1,81 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e426]:
+      - generic [ref=e427]:
+        - paragraph [ref=e428]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e429]
+      - generic [ref=e430]:
+        - strong [ref=e431]: 28:47
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e432]:
+      - complementary [ref=e433]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e434]
+        - button "01 Clue 1 ✓" [ref=e435] [cursor=pointer]:
+          - generic [ref=e436]: "01"
+          - generic [ref=e437]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ✓" [ref=e438] [cursor=pointer]:
+          - generic [ref=e439]: "02"
+          - generic [ref=e440]: Clue 2
+          - text: ✓
+        - button "03 Clue 3 ✓" [ref=e441] [cursor=pointer]:
+          - generic [ref=e442]: "03"
+          - generic [ref=e443]: Clue 3
+          - text: ✓
+        - button "04 Clue 4 ✓" [ref=e444] [cursor=pointer]:
+          - generic [ref=e445]: "04"
+          - generic [ref=e446]: Clue 4
+          - text: ✓
+        - button "05 Clue 5 ✓" [ref=e447] [cursor=pointer]:
+          - generic [ref=e448]: "05"
+          - generic [ref=e449]: Clue 5
+          - text: ✓
+        - button "06 Final accusation →" [ref=e450] [cursor=pointer]:
+          - generic [ref=e451]: "06"
+          - generic [ref=e452]: Final accusation
+          - text: →
+        - paragraph [ref=e453]: 5 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e454] [cursor=pointer]
+      - generic [ref=e455]:
+        - paragraph [ref=e456]: QUESTION 06 · YOUR FINAL DEDUCTION
+        - heading "Everyone has a secret. Only one is a killer." [level=2] [ref=e457]: Everyone has a secret.Only one is a killer.
+        - paragraph [ref=e458]: You have all five clues. Discuss your theory, then identify the killer, the weapon, and the motive. An incorrect combination deducts 3 minutes; you can try again.
+        - generic [ref=e459]:
+          - generic [ref=e460]:
+            - generic [ref=e461]:
+              - generic [ref=e462]: KILLER
+              - textbox "KILLER" [ref=e463]:
+                - /placeholder: Who committed the murder?
+            - generic [ref=e464]:
+              - generic [ref=e465]: MURDER WEAPON
+              - textbox "MURDER WEAPON" [ref=e466]:
+                - /placeholder: What killed the victim?
+            - generic [ref=e467]:
+              - generic [ref=e468]: MOTIVE
+              - combobox "MOTIVE" [ref=e469]:
+                - option "Select your theory" [selected]
+                - option "Jealousy"
+                - option "Business Conflict"
+                - option "Unresolved conflict"
+                - option "Infidelity Issues"
+                - option "Money Motive"
+                - option "Insecurity"
+          - paragraph [ref=e470]: Answers ignore capitalization. Review your evidence before submitting.
+          - button "Submit final accusation ↗" [ref=e471] [cursor=pointer]
+          - status [ref=e472]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

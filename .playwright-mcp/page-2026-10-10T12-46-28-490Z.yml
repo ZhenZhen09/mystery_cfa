@@ -1,0 +1,62 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e387]:
+      - generic [ref=e388]:
+        - paragraph [ref=e389]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e390]
+      - generic [ref=e391]:
+        - strong [ref=e392]: 28:53
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e393]:
+      - complementary [ref=e394]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e395]
+        - button "01 Clue 1 ✓" [ref=e396] [cursor=pointer]:
+          - generic [ref=e397]: "01"
+          - generic [ref=e398]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ✓" [ref=e399] [cursor=pointer]:
+          - generic [ref=e400]: "02"
+          - generic [ref=e401]: Clue 2
+          - text: ✓
+        - button "03 Clue 3 ✓" [ref=e402] [cursor=pointer]:
+          - generic [ref=e403]: "03"
+          - generic [ref=e404]: Clue 3
+          - text: ✓
+        - button "04 Clue 4 ✓" [ref=e405] [cursor=pointer]:
+          - generic [ref=e406]: "04"
+          - generic [ref=e407]: Clue 4
+          - text: ✓
+        - button "05 Clue 5 ✓" [ref=e408] [cursor=pointer]:
+          - generic [ref=e409]: "05"
+          - generic [ref=e410]: Clue 5
+          - text: ✓
+        - button "06 Final accusation →" [ref=e411] [cursor=pointer]:
+          - generic [ref=e412]: "06"
+          - generic [ref=e413]: Final accusation
+          - text: →
+        - paragraph [ref=e414]: 5 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e415] [cursor=pointer]
+      - generic [ref=e416]:
+        - paragraph [ref=e417]: CLUE 05 · EVIDENCE RECOVERED
+        - heading "The Waitress" [level=2] [ref=e418]
+        - generic [ref=e419]: UNLOCKED & SAVED TO YOUR CASE FILE
+        - paragraph [ref=e421]: The waitress admits she saw the Chef with the victim’s glass but kept quiet because she secretly loved the Chef.
+        - paragraph [ref=e422]: THE CHIEF'S STATEMENT
+        - paragraph [ref=e424]: Review the Chief's statement and compare it with the other evidence.
+        - button "Make your final accusation →" [ref=e425] [cursor=pointer]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

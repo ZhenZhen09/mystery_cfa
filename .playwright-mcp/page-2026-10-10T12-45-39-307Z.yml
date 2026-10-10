@@ -1,0 +1,61 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e114]:
+      - generic [ref=e115]:
+        - paragraph [ref=e116]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e117]
+      - generic [ref=e118]:
+        - strong [ref=e119]: 29:42
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e120]:
+      - complementary [ref=e121]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e122]
+        - button "01 Clue 1 ✓" [ref=e123] [cursor=pointer]:
+          - generic [ref=e124]: "01"
+          - generic [ref=e125]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ○" [disabled] [ref=e126]:
+          - generic [ref=e127]: "02"
+          - generic [ref=e128]: Clue 2
+          - text: ○
+        - button "03 Clue 3 ○" [disabled] [ref=e129]:
+          - generic [ref=e130]: "03"
+          - generic [ref=e131]: Clue 3
+          - text: ○
+        - button "04 Clue 4 ○" [disabled] [ref=e132]:
+          - generic [ref=e133]: "04"
+          - generic [ref=e134]: Clue 4
+          - text: ○
+        - button "05 Clue 5 ○" [disabled] [ref=e135]:
+          - generic [ref=e136]: "05"
+          - generic [ref=e137]: Clue 5
+          - text: ○
+        - button "06 Investigation →" [ref=e138] [cursor=pointer]:
+          - generic [ref=e139]: "06"
+          - generic [ref=e140]: Investigation
+          - text: →
+        - paragraph [ref=e141]: 1 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e142] [cursor=pointer]
+      - generic [ref=e143]:
+        - paragraph [ref=e144]: CLUE 01 · EVIDENCE RECOVERED
+        - heading "The Food" [level=2] [ref=e145]
+        - generic [ref=e146]: UNLOCKED & SAVED TO YOUR CASE FILE
+        - paragraph [ref=e148]: No poison was found in the food.
+        - paragraph [ref=e149]: If the food was clean, what else did the victim consume?
+        - button "Continue investigating →" [ref=e150] [cursor=pointer]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

@@ -1,0 +1,27 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - link "The Last Reunion Dinner home" [ref=f2e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e4]: R
+      - generic [ref=f2e5]:
+        - text: REUNION
+        - generic [ref=f2e6]: A MURDER MYSTERY
+    - navigation [ref=f2e7]:
+      - button "♫ Music off" [ref=f2e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=f2e9] [cursor=pointer]
+      - generic [ref=f2e10]: CASE NO. 2010
+  - main [ref=f2e12]:
+    - generic [ref=f2e29]:
+      - paragraph [ref=f2e30]: TEAM 1 · YOUR CASE BRIEFING
+      - generic [ref=f2e31]:
+        - paragraph [ref=f2e32]: REUNION MURDER MYSTERY
+        - heading "A toast to the past. A night with no tomorrow." [level=2] [ref=f2e33]: A toast to the past.A night with no tomorrow.
+        - paragraph [ref=f2e34]: A group of former high-school classmates reunites for dinner after many years. One of them, now a famous vlogger and successful entrepreneur, returns to reconnect with old friends.
+        - paragraph [ref=f2e35]: "Keep the source articles available: they contain the answers to the five questions. Answers ignore capitalization and surrounding spaces. Clues unlock in order; revisit them in your case file anytime."
+        - button "Start the 30-minute investigation ↗" [ref=f2e36] [cursor=pointer]
+        - status [ref=f2e37]
+        - button "Back to team selection" [ref=f2e38] [cursor=pointer]
+  - contentinfo [ref=f2e25]:
+    - generic [ref=f2e26]: THE LAST REUNION DINNER
+    - generic [ref=f2e27]: Every old friend has a new secret.
+    - generic [ref=f2e28]: 30 MINUTES · 2 TEAMS · 1 TRUTH

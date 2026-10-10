@@ -1,0 +1,9 @@
+[     348ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:8770/favicon.ico:0
+[    4469ms] [ERROR] Failed to load resource: the server responded with a status of 404 (File not found) @ http://127.0.0.1:8770/favicon.ico:0
+[   31509ms] [ERROR] Failed to load resource: the server responded with a status of 422 (Unprocessable Entity) @ http://127.0.0.1:8770/api/answer:0
+[   59899ms] TypeError: Cannot set properties of undefined (setting 'disabled')
+    at document.querySelector.onsubmit (http://127.0.0.1:8770/app.js:222:26)
+    at send (eval at <anonymous> (eval at evaluate (:367:30)), <anonymous>:1:318)
+    at async eval (eval at <anonymous> (eval at evaluate (:367:30)), <anonymous>:1:435)
+    at async eval (eval at evaluate (:367:30), <anonymous>:4:30)
+    at async <anonymous>:393:30

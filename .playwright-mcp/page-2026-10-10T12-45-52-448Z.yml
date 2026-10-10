@@ -1,0 +1,63 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e232]:
+      - generic [ref=e233]:
+        - paragraph [ref=e234]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e235]
+      - generic [ref=e236]:
+        - strong [ref=e237]: 29:29
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e238]:
+      - complementary [ref=e239]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e240]
+        - button "01 Clue 1 ✓" [ref=e241] [cursor=pointer]:
+          - generic [ref=e242]: "01"
+          - generic [ref=e243]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ✓" [ref=e244] [cursor=pointer]:
+          - generic [ref=e245]: "02"
+          - generic [ref=e246]: Clue 2
+          - text: ✓
+        - button "03 Clue 3 ○" [disabled] [ref=e247]:
+          - generic [ref=e248]: "03"
+          - generic [ref=e249]: Clue 3
+          - text: ○
+        - button "04 Clue 4 ○" [disabled] [ref=e250]:
+          - generic [ref=e251]: "04"
+          - generic [ref=e252]: Clue 4
+          - text: ○
+        - button "05 Clue 5 ○" [disabled] [ref=e253]:
+          - generic [ref=e254]: "05"
+          - generic [ref=e255]: Clue 5
+          - text: ○
+        - button "06 Investigation →" [ref=e256] [cursor=pointer]:
+          - generic [ref=e257]: "06"
+          - generic [ref=e258]: Investigation
+          - text: →
+        - paragraph [ref=e259]: 2 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e260] [cursor=pointer]
+      - generic [ref=e261]:
+        - paragraph [ref=e262]: CLUE 02 · EVIDENCE RECOVERED
+        - heading "The Glass" [level=2] [ref=e263]
+        - generic [ref=e264]: UNLOCKED & SAVED TO YOUR CASE FILE
+        - paragraph [ref=e266]: The waitress saw the Chef handling the victim’s glass before dinner.
+        - paragraph [ref=e267]: THE WAITRESS'S STATEMENT
+        - paragraph [ref=e269]: THE CHEF'S STATEMENT
+        - paragraph [ref=e271]: Hear both witness statements and compare what each person reveals.
+        - button "Continue investigating →" [ref=e272] [cursor=pointer]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

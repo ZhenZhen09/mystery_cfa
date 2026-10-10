@@ -1,0 +1,29 @@
+- generic [ref=f4e1]:
+  - banner [ref=f4e2]:
+    - link "The Last Reunion Dinner home" [ref=f4e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f4e4]: R
+      - generic [ref=f4e5]:
+        - text: REUNION
+        - generic [ref=f4e6]: A MURDER MYSTERY
+    - navigation [ref=f4e7]:
+      - button "♫ Music off" [ref=f4e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=f4e9] [cursor=pointer]
+      - generic [ref=f4e10]: CASE NO. 2010
+  - main [ref=f4e12]:
+    - generic [ref=f4e28]:
+      - paragraph [ref=f4e29]: TEAM 1 ACCESS
+      - heading "The Night Owls" [level=1] [ref=f4e30]
+      - paragraph [ref=f4e31]: Enter the access code provided by your Game Master to open your team’s case file.
+      - generic [ref=f4e32]:
+        - generic [ref=f4e33]: TEAM 1 ACCESS CODE
+        - textbox "TEAM 1 ACCESS CODE" [active] [ref=f4e34]
+        - button "Enter team portal" [ref=f4e35] [cursor=pointer]:
+          - text: Enter team portal
+          - generic [aria-hidden] [ref=f4e36]: ↗
+        - status [ref=f4e37]: Team access code required.
+      - button "Back to game selection" [ref=f4e38] [cursor=pointer]
+  - contentinfo [ref=f4e23]:
+    - generic [ref=f4e24]: THE LAST REUNION DINNER
+    - generic [ref=f4e25]: Every old friend has a new secret.
+    - generic [ref=f4e26]: 30 MINUTES · 2 TEAMS · 1 TRUTH

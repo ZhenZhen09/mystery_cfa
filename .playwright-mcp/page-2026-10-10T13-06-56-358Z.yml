@@ -1,0 +1,109 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - link "The Last Reunion Dinner home" [ref=f2e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e4]: R
+      - generic [ref=f2e5]:
+        - text: REUNION
+        - generic [ref=f2e6]: A MURDER MYSTERY
+    - navigation [ref=f2e7]:
+      - button "♫ Music off" [ref=f2e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=f2e9] [cursor=pointer]
+      - generic [ref=f2e10]: CASE NO. 2010
+  - main [ref=f2e12]:
+    - generic [ref=f2e139]:
+      - generic [ref=f2e140]:
+        - paragraph [ref=f2e141]: GAME MASTER · LIVE MONITOR
+        - heading "Game Master Dashboard" [level=1] [ref=f2e142]
+        - paragraph [ref=f2e143]: Each team's 30-minute timer starts when that team enters its investigation.
+      - generic [ref=f2e144]:
+        - button "Start new round" [ref=f2e145] [cursor=pointer]
+        - button "Log out" [ref=f2e146] [cursor=pointer]
+    - region "Team progress" [ref=f2e147]:
+      - article [ref=f2e148]:
+        - generic [ref=f2e149]:
+          - generic [ref=f2e150]:
+            - paragraph [ref=f2e151]: GAME 1
+            - heading "Team One · The Night Owls" [level=2] [ref=f2e152]
+          - generic [ref=f2e153]: Investigating
+        - generic [ref=f2e154]:
+          - generic [ref=f2e155]:
+            - generic [ref=f2e156]: CLUES RECOVERED
+            - strong [ref=f2e157]: 0/5
+          - generic [ref=f2e158]:
+            - generic [ref=f2e159]: TIME REMAINING
+            - strong [ref=f2e160]: 29:59
+          - generic [ref=f2e161]:
+            - generic [ref=f2e162]: WRONG FINAL ANSWERS
+            - strong [ref=f2e163]: "0"
+        - progressbar "Team 1 clue progress" [ref=f2e164]
+      - article [ref=f2e165]:
+        - generic [ref=f2e166]:
+          - generic [ref=f2e167]:
+            - paragraph [ref=f2e168]: GAME 2
+            - heading "Team Two · The Silent Witnesses" [level=2] [ref=f2e169]
+          - generic [ref=f2e170]: Investigating
+        - generic [ref=f2e171]:
+          - generic [ref=f2e172]:
+            - generic [ref=f2e173]: CLUES RECOVERED
+            - strong [ref=f2e174]: 0/5
+          - generic [ref=f2e175]:
+            - generic [ref=f2e176]: TIME REMAINING
+            - strong [ref=f2e177]: 29:59
+          - generic [ref=f2e178]:
+            - generic [ref=f2e179]: WRONG FINAL ANSWERS
+            - strong [ref=f2e180]: "0"
+        - progressbar "Team 2 clue progress" [ref=f2e181]
+    - generic [ref=f2e182]:
+      - generic [ref=f2e183]:
+        - generic [ref=f2e184]:
+          - paragraph [ref=f2e185]: ROUND ACTIVITY
+          - heading "Team activity logs" [level=2] [ref=f2e186]
+        - button "Refresh" [ref=f2e187] [cursor=pointer]
+      - generic [ref=f2e188]:
+        - region "Team One activity" [ref=f2e189]:
+          - generic [ref=f2e190]:
+            - heading "Team One Activity" [level=3] [ref=f2e191]
+            - generic [ref=f2e192]:
+              - generic [ref=f2e193]: 2 events
+              - button "Delete Team One activity log" [ref=f2e194] [cursor=pointer]: Delete log
+          - list [ref=f2e195]:
+            - listitem [ref=f2e196]:
+              - generic [ref=f2e198]:
+                - generic [ref=f2e199]:
+                  - strong [ref=f2e200]: Round 1 · Game 1 · answer attempt
+                  - time [ref=f2e201]: 10/10/2026, 9:06:54 PM
+                  - generic [ref=f2e202]: Incorrect
+                - paragraph [ref=f2e203]: "Team 1 submitted an answer for question 1: incorrect."
+                - paragraph [ref=f2e204]: "Answer submitted: “random”"
+            - listitem [ref=f2e205]:
+              - generic [ref=f2e207]:
+                - generic [ref=f2e208]:
+                  - strong [ref=f2e209]: Round 1 · Game 1 · team started
+                  - time [ref=f2e210]: 10/10/2026, 9:06:54 PM
+                - paragraph [ref=f2e211]: Team 1 started its investigation.
+        - region "Team Two activity" [ref=f2e212]:
+          - generic [ref=f2e213]:
+            - heading "Team Two Activity" [level=3] [ref=f2e214]
+            - generic [ref=f2e215]:
+              - generic [ref=f2e216]: 2 events
+              - button "Delete Team Two activity log" [ref=f2e217] [cursor=pointer]: Delete log
+          - list [ref=f2e218]:
+            - listitem [ref=f2e219]:
+              - generic [ref=f2e221]:
+                - generic [ref=f2e222]:
+                  - strong [ref=f2e223]: Round 1 · Game 2 · answer attempt
+                  - time [ref=f2e224]: 10/10/2026, 9:06:54 PM
+                  - generic [ref=f2e225]: Incorrect
+                - paragraph [ref=f2e226]: "Team 2 submitted an answer for question 1: incorrect."
+                - paragraph [ref=f2e227]: "Answer submitted: “incorrect”"
+            - listitem [ref=f2e228]:
+              - generic [ref=f2e230]:
+                - generic [ref=f2e231]:
+                  - strong [ref=f2e232]: Round 1 · Game 2 · team started
+                  - time [ref=f2e233]: 10/10/2026, 9:06:54 PM
+                - paragraph [ref=f2e234]: Team 2 started its investigation.
+  - contentinfo [ref=f2e59]:
+    - generic [ref=f2e60]: THE LAST REUNION DINNER
+    - generic [ref=f2e61]: Every old friend has a new secret.
+    - generic [ref=f2e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

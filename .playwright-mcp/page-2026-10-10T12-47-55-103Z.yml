@@ -1,0 +1,84 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - link "The Last Reunion Dinner home" [ref=f2e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=f2e4]: R
+      - generic [ref=f2e5]:
+        - text: REUNION
+        - generic [ref=f2e6]: A MURDER MYSTERY
+    - navigation [ref=f2e7]:
+      - button "♫ Music off" [ref=f2e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=f2e9] [cursor=pointer]
+      - generic [ref=f2e10]: CASE NO. 2010
+  - main [ref=f2e12]:
+    - generic [ref=f2e154]:
+      - generic [ref=f2e155]:
+        - paragraph [ref=f2e156]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=f2e157]
+      - generic [ref=f2e158]:
+        - strong [ref=f2e159]: 24:27
+        - text: CASE CLOSED · 02:33 ELAPSED
+    - generic [ref=f2e160]:
+      - complementary [ref=f2e161]:
+        - heading "YOUR CASE FILE" [level=2] [ref=f2e162]
+        - button "01 Clue 1 ✓" [ref=f2e163] [cursor=pointer]:
+          - generic [ref=f2e164]: "01"
+          - generic [ref=f2e165]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ✓" [ref=f2e166] [cursor=pointer]:
+          - generic [ref=f2e167]: "02"
+          - generic [ref=f2e168]: Clue 2
+          - text: ✓
+        - button "03 Clue 3 ✓" [ref=f2e169] [cursor=pointer]:
+          - generic [ref=f2e170]: "03"
+          - generic [ref=f2e171]: Clue 3
+          - text: ✓
+        - button "04 Clue 4 ✓" [ref=f2e172] [cursor=pointer]:
+          - generic [ref=f2e173]: "04"
+          - generic [ref=f2e174]: Clue 4
+          - text: ✓
+        - button "05 Clue 5 ✓" [ref=f2e175] [cursor=pointer]:
+          - generic [ref=f2e176]: "05"
+          - generic [ref=f2e177]: Clue 5
+          - text: ✓
+        - button "06 The truth →" [ref=f2e178] [cursor=pointer]:
+          - generic [ref=f2e179]: "06"
+          - generic [ref=f2e180]: The truth
+          - text: →
+        - paragraph [ref=f2e181]: 5 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=f2e182] [cursor=pointer]
+      - generic [ref=f2e183]:
+        - paragraph [ref=f2e184]: CASE CLOSED · THE TRUTH BEHIND THE REUNION
+        - paragraph [ref=f2e185]: YOU WON!
+        - heading "You Uncovered the Truth" [level=2] [ref=f2e186]
+        - paragraph [ref=f2e187]: Your team correctly identified the killer, weapon, and motive.
+        - paragraph [ref=f2e188]: YOUR TEAM'S FINAL ANSWERS
+        - generic [ref=f2e189]:
+          - generic [ref=f2e190]:
+            - generic [ref=f2e191]: KILLER
+            - textbox "KILLER" [disabled] [ref=f2e192]: SAM
+          - generic [ref=f2e193]:
+            - generic [ref=f2e194]: MURDER WEAPON
+            - textbox "MURDER WEAPON" [disabled] [ref=f2e195]: Poison Drink
+          - generic [ref=f2e196]:
+            - generic [ref=f2e197]: MOTIVE
+            - textbox "MOTIVE" [disabled] [ref=f2e198]: Jealousy
+        - generic [ref=f2e199]:
+          - generic [ref=f2e200]:
+            - text: KILLER
+            - heading "The Chef" [level=3] [ref=f2e201]
+          - generic [ref=f2e202]:
+            - text: WEAPON
+            - heading "Poisoned Drink" [level=3] [ref=f2e203]
+          - generic [ref=f2e204]:
+            - text: MOTIVE
+            - heading "Jealousy" [level=3] [ref=f2e205]
+        - paragraph [ref=f2e207]: The food was clean. The poison was in the drink. The Chef handled the glass, and the hidden message and photo exposed a secret relationship. Jealousy turned that secret into murder.
+        - paragraph [ref=f2e208]: The waitress witnessed the Chef handling the glass. Her own love for the Chef kept her silent, but her confession finally connected the evidence.
+        - generic [ref=f2e209]: 5/5 CLUES RECOVERED · CASE SOLVED
+        - paragraph [ref=f2e210]: The other team's investigation continues independently. Keep the solution private until both groups finish.
+    - status
+  - contentinfo [ref=f2e59]:
+    - generic [ref=f2e60]: THE LAST REUNION DINNER
+    - generic [ref=f2e61]: Every old friend has a new secret.
+    - generic [ref=f2e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

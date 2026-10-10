@@ -1,0 +1,66 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e151]:
+      - generic [ref=e152]:
+        - paragraph [ref=e153]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e154]
+      - generic [ref=e155]:
+        - strong [ref=e156]: 29:38
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e157]:
+      - complementary [ref=e158]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e159]
+        - button "01 Clue 1 ✓" [ref=e160] [cursor=pointer]:
+          - generic [ref=e161]: "01"
+          - generic [ref=e162]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ○" [disabled] [ref=e163]:
+          - generic [ref=e164]: "02"
+          - generic [ref=e165]: Clue 2
+          - text: ○
+        - button "03 Clue 3 ○" [disabled] [ref=e166]:
+          - generic [ref=e167]: "03"
+          - generic [ref=e168]: Clue 3
+          - text: ○
+        - button "04 Clue 4 ○" [disabled] [ref=e169]:
+          - generic [ref=e170]: "04"
+          - generic [ref=e171]: Clue 4
+          - text: ○
+        - button "05 Clue 5 ○" [disabled] [ref=e172]:
+          - generic [ref=e173]: "05"
+          - generic [ref=e174]: Clue 5
+          - text: ○
+        - button "06 Investigation →" [ref=e175] [cursor=pointer]:
+          - generic [ref=e176]: "06"
+          - generic [ref=e177]: Investigation
+          - text: →
+        - paragraph [ref=e178]: 1 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e179] [cursor=pointer]
+      - generic [ref=e180]:
+        - paragraph [ref=e181]: CLUE 02 · LOCKED EVIDENCE
+        - 'heading "In the feature article, complete the title: Alvin’s Next Chapter: Balancing Work, Life, and _______." [level=2] [ref=e182]'
+        - paragraph [ref=e183]: Find the answer in your source article to open this evidence envelope.
+        - generic [ref=e184]:
+          - generic [ref=e185]: YOUR ANSWER
+          - generic [ref=e186]:
+            - textbox "YOUR ANSWER" [ref=e187]:
+              - /placeholder: Type your answer…
+            - button "Unlock clue ↗" [ref=e188] [cursor=pointer]
+          - paragraph [ref=e189]: Answers are not case sensitive.
+          - status [ref=e190]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

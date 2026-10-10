@@ -1,0 +1,59 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music off" [ref=e8] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e182]:
+      - generic [ref=e183]:
+        - paragraph [ref=e184]: GAME MASTER · LIVE MONITOR
+        - heading "Game Master Dashboard" [level=1] [ref=e185]
+        - paragraph [ref=e186]: Each team's 30-minute timer starts when that team enters its investigation.
+      - generic [ref=e187]:
+        - button "Start new round" [ref=e188] [cursor=pointer]
+        - button "Log out" [ref=e189] [cursor=pointer]
+    - navigation "Game Master pages" [ref=e190]:
+      - button "Team overview" [ref=e191] [cursor=pointer]
+      - button "Team access codes" [ref=e192] [cursor=pointer]
+    - generic [ref=e193]:
+      - generic [ref=e195]:
+        - paragraph [ref=e196]: TEAM SECURITY
+        - heading "Team access codes" [level=2] [ref=e197]
+        - paragraph [ref=e198]: Set a separate code for each team and share it with them privately. Saving a new code signs that team out.
+      - generic [ref=e199]:
+        - generic [ref=e200]:
+          - generic [ref=e201]:
+            - heading "Team One · The Night Owls" [level=3] [ref=e202]
+            - generic [ref=e203]: Not set
+          - generic [ref=e204]: CREATE ACCESS CODE
+          - generic [ref=e205]:
+            - textbox "CREATE ACCESS CODE" [ref=e206]:
+              - /placeholder: At least 8 characters
+              - text: first
+            - button "Show Team 1 access code" [ref=e207] [cursor=pointer]: Show
+          - button "Save code" [ref=e208] [cursor=pointer]
+          - paragraph [ref=e209]: The saved code is never displayed here. Replacing it signs out this team.
+          - status [ref=e210]
+        - generic [ref=e211]:
+          - generic [ref=e212]:
+            - heading "Team Two · The Silent Witnesses" [level=3] [ref=e213]
+            - generic [ref=e214]: Not set
+          - generic [ref=e215]: CREATE ACCESS CODE
+          - generic [ref=e216]:
+            - textbox "CREATE ACCESS CODE" [ref=e217]:
+              - /placeholder: At least 8 characters
+            - button "Show Team 2 access code" [ref=e218] [cursor=pointer]: Show
+          - button "Save code" [ref=e219] [cursor=pointer]
+          - paragraph [ref=e220]: The saved code is never displayed here. Replacing it signs out this team.
+          - status [ref=e221]
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

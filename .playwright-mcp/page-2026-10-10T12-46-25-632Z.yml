@@ -1,0 +1,61 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e350]:
+      - generic [ref=e351]:
+        - paragraph [ref=e352]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e353]
+      - generic [ref=e354]:
+        - strong [ref=e355]: 28:56
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e356]:
+      - complementary [ref=e357]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e358]
+        - button "01 Clue 1 ✓" [ref=e359] [cursor=pointer]:
+          - generic [ref=e360]: "01"
+          - generic [ref=e361]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ✓" [ref=e362] [cursor=pointer]:
+          - generic [ref=e363]: "02"
+          - generic [ref=e364]: Clue 2
+          - text: ✓
+        - button "03 Clue 3 ✓" [ref=e365] [cursor=pointer]:
+          - generic [ref=e366]: "03"
+          - generic [ref=e367]: Clue 3
+          - text: ✓
+        - button "04 Clue 4 ✓" [ref=e368] [cursor=pointer]:
+          - generic [ref=e369]: "04"
+          - generic [ref=e370]: Clue 4
+          - text: ✓
+        - button "05 Clue 5 ✓" [ref=e371] [cursor=pointer]:
+          - generic [ref=e372]: "05"
+          - generic [ref=e373]: Clue 5
+          - text: ✓
+        - button "06 Final accusation →" [ref=e374] [cursor=pointer]:
+          - generic [ref=e375]: "06"
+          - generic [ref=e376]: Final accusation
+          - text: →
+        - paragraph [ref=e377]: 5 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e378] [cursor=pointer]
+      - generic [ref=e379]:
+        - paragraph [ref=e380]: CLUE 03 · EVIDENCE RECOVERED
+        - heading "The Secret Message" [level=2] [ref=e381]
+        - generic [ref=e382]: UNLOCKED & SAVED TO YOUR CASE FILE
+        - paragraph [ref=e384]: “You promised me we would be together. I’m tired of being your secret.”
+        - paragraph [ref=e385]: Who sent this message? Who was hiding a relationship?
+        - button "Make your final accusation →" [ref=e386] [cursor=pointer]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

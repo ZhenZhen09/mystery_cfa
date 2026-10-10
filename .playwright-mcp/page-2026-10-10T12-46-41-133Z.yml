@@ -1,0 +1,69 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e473]:
+      - generic [ref=e474]:
+        - paragraph [ref=e475]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e476]
+      - generic [ref=e477]:
+        - strong [ref=e478]: 25:40
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e479]:
+      - complementary [ref=e480]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e481]
+        - button "01 Clue 1 ✓" [ref=e482] [cursor=pointer]:
+          - generic [ref=e483]: "01"
+          - generic [ref=e484]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ✓" [ref=e485] [cursor=pointer]:
+          - generic [ref=e486]: "02"
+          - generic [ref=e487]: Clue 2
+          - text: ✓
+        - button "03 Clue 3 ✓" [ref=e488] [cursor=pointer]:
+          - generic [ref=e489]: "03"
+          - generic [ref=e490]: Clue 3
+          - text: ✓
+        - button "04 Clue 4 ✓" [ref=e491] [cursor=pointer]:
+          - generic [ref=e492]: "04"
+          - generic [ref=e493]: Clue 4
+          - text: ✓
+        - button "05 Clue 5 ✓" [ref=e494] [cursor=pointer]:
+          - generic [ref=e495]: "05"
+          - generic [ref=e496]: Clue 5
+          - text: ✓
+        - button "06 Final accusation →" [ref=e497] [cursor=pointer]:
+          - generic [ref=e498]: "06"
+          - generic [ref=e499]: Final accusation
+          - text: →
+        - paragraph [ref=e500]: 5 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e501] [cursor=pointer]
+      - generic [ref=e502]:
+        - paragraph [ref=e503]: QUESTION 06 · YOUR FINAL DEDUCTION
+        - heading "Accusation submitted" [level=2] [ref=e504]
+        - status [ref=e505]: That combination was incorrect. Three minutes were deducted. Your submitted answers are locked below.
+        - generic [ref=e506]:
+          - generic [ref=e507]:
+            - generic [ref=e508]: KILLER
+            - textbox "KILLER" [disabled] [ref=e509]: Waitress
+          - generic [ref=e510]:
+            - generic [ref=e511]: MURDER WEAPON
+            - textbox "MURDER WEAPON" [disabled] [ref=e512]: Knife
+          - generic [ref=e513]:
+            - generic [ref=e514]: MOTIVE
+            - textbox "MOTIVE" [disabled] [ref=e515]: Money Motive
+        - button "Try another accusation" [ref=e516] [cursor=pointer]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH

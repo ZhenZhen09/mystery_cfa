@@ -1,0 +1,66 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "The Last Reunion Dinner home" [ref=e3] [cursor=pointer]:
+      - /url: /
+      - generic [ref=e4]: R
+      - generic [ref=e5]:
+        - text: REUNION
+        - generic [ref=e6]: A MURDER MYSTERY
+    - navigation [ref=e7]:
+      - button "♫ Music on" [pressed] [ref=e73] [cursor=pointer]
+      - button "↗ Theme music" [ref=e9] [cursor=pointer]
+      - generic [ref=e10]: CASE NO. 2010
+  - main [ref=e12]:
+    - generic [ref=e273]:
+      - generic [ref=e274]:
+        - paragraph [ref=e275]: TEAM ONE · THE NIGHT OWLS
+        - heading "The Last Reunion Dinner" [level=1] [ref=e276]
+      - generic [ref=e277]:
+        - strong [ref=e278]: 29:13
+        - text: TIME TO FIND THE TRUTH
+    - generic [ref=e279]:
+      - complementary [ref=e280]:
+        - heading "YOUR CASE FILE" [level=2] [ref=e281]
+        - button "01 Clue 1 ✓" [ref=e282] [cursor=pointer]:
+          - generic [ref=e283]: "01"
+          - generic [ref=e284]: Clue 1
+          - text: ✓
+        - button "02 Clue 2 ✓" [ref=e285] [cursor=pointer]:
+          - generic [ref=e286]: "02"
+          - generic [ref=e287]: Clue 2
+          - text: ✓
+        - button "03 Clue 3 ○" [disabled] [ref=e288]:
+          - generic [ref=e289]: "03"
+          - generic [ref=e290]: Clue 3
+          - text: ○
+        - button "04 Clue 4 ○" [disabled] [ref=e291]:
+          - generic [ref=e292]: "04"
+          - generic [ref=e293]: Clue 4
+          - text: ○
+        - button "05 Clue 5 ○" [disabled] [ref=e294]:
+          - generic [ref=e295]: "05"
+          - generic [ref=e296]: Clue 5
+          - text: ○
+        - button "06 Investigation →" [ref=e297] [cursor=pointer]:
+          - generic [ref=e298]: "06"
+          - generic [ref=e299]: Investigation
+          - text: →
+        - paragraph [ref=e300]: 2 of 5 clues recovered.Compare the evidence before making your final accusation.
+        - button "Return to team selection" [ref=e301] [cursor=pointer]
+      - generic [ref=e302]:
+        - paragraph [ref=e303]: CLUE 03 · LOCKED EVIDENCE
+        - 'heading "In the feature article “A Furmom’s Heart: Krisselle and Her Beloved Companions”, what breed is Dachi, her lively 2-year-old dog?" [level=2] [ref=e304]'
+        - paragraph [ref=e305]: Find the answer in your source article to open this evidence envelope.
+        - generic [ref=e306]:
+          - generic [ref=e307]: YOUR ANSWER
+          - generic [ref=e308]:
+            - textbox "YOUR ANSWER" [ref=e309]:
+              - /placeholder: Type your answer…
+            - button "Unlock clue ↗" [ref=e310] [cursor=pointer]
+          - paragraph [ref=e311]: Answers are not case sensitive.
+          - status [ref=e312]
+    - status
+  - contentinfo [ref=e59]:
+    - generic [ref=e60]: THE LAST REUNION DINNER
+    - generic [ref=e61]: Every old friend has a new secret.
+    - generic [ref=e62]: 30 MINUTES · 2 TEAMS · 1 TRUTH
