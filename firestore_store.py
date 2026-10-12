@@ -215,17 +215,21 @@ class FirestoreGameStore:
             batch.commit()
 
     def clear_team_events(self, team):
-        query = self.db.collection_group('events').where('team_id', '==', team)
+        meta = self.meta.get().to_dict() or {}
+        latest_round_id = max(meta.get('active_round_id', 1), meta.get('next_round_id', 2) - 1)
         total = 0
-        while True:
-            snapshots = list(query.limit(400).stream())
-            if not snapshots:
-                return total
-            batch = self.db.batch()
-            for snapshot in snapshots:
-                batch.delete(snapshot.reference)
-            batch.commit()
-            total += len(snapshots)
+        for round_id in range(1, latest_round_id + 1):
+            query = self.rounds.document(str(round_id)).collection('events').where('team_id', '==', team)
+            while True:
+                snapshots = list(query.limit(400).stream())
+                if not snapshots:
+                    break
+                batch = self.db.batch()
+                for snapshot in snapshots:
+                    batch.delete(snapshot.reference)
+                batch.commit()
+                total += len(snapshots)
+        return total
 
     def _append_events(self, transaction, meta, round_id, specs):
         next_id = meta['next_event_id']
